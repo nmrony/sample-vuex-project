@@ -36,7 +36,7 @@ export default new Vuex.Store({
       console.log("I will call mutation after 3 seconds");
       setTimeout(() => {
         contex.commit('registerUser', userId)
-      }, 3000);
+      }, 1000);
     }
   }
 });
