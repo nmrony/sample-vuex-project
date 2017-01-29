@@ -30,5 +30,13 @@ export default new Vuex.Store({
       const user = state.users.find(user => user.id === payload.userId);
       user.registered = false;
     }
+  },
+  actions: {
+    register(contex, userId) {
+      console.log("I will call mutation after 3 seconds");
+      setTimeout(() => {
+        contex.commit('registerUser', userId)
+      }, 3000);
+    }
   }
 });

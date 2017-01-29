@@ -40,7 +40,8 @@
         // we dont need this
         //this.$emit('registerUser', user);
         // user.registered = true;
-        this.$store.commit('registerUser', user.id)
+        // this.$store.commit('registerUser', user.id)
+        this.$store.dispatch('register', user.id)
       }
     }
   }
