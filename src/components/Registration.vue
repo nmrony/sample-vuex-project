@@ -24,10 +24,16 @@
 <script>
   export default {
     name: 'registration',
-    props: ['registeredUsers'],
+    computed: {
+      registeredUsers() {
+        return this.$store.state.users.filter(user => user.registered)
+      }
+    },
     methods: {
       unRegister(user) {
-        this.$emit('unRegisterUser', user)
+        // we dont need this
+        // this.$emit('unRegisterUser', user)
+        user.registered = false;
       }
     }
   }

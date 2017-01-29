@@ -26,13 +26,15 @@
     name: 'users',
     computed: {
       users() {
-        return this.$store.state.users;
+        console.log('In user', this.$store.state.users);
+        return this.$store.state.users.filter(user => !user.registered);
       }
     },
     methods: {
       registerUser(user) {
-
-        this.$emit('registerUser', user);
+        // we dont need this
+        //this.$emit('registerUser', user);
+        user.registered = true;
       }
     }
   }
