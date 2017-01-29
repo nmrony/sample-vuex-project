@@ -13,7 +13,7 @@
           {{ user.name }}
         </td>
         <td>
-          <button @click="register(user)">Register</button>
+          <button @click="registerUser(user)">Register</button>
         </td>
       </tr>
       </tbody>
@@ -28,7 +28,7 @@
       'users'
     ],
     methods: {
-      register(user) {
+      registerUser(user) {
 
         this.$emit('registerUser', user);
       }
