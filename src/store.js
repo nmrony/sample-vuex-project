@@ -20,5 +20,15 @@ export default new Vuex.Store({
     registeredUsers(state) {
       return state.users.filter(user => user.registered)
     }
+  },
+  mutations: {
+    registerUser(state, userId) {
+      const user = state.users.find(user => user.id === userId);
+      user.registered = true;
+    },
+    unregisterUser(state, payload) {
+      const user = state.users.find(user => user.id === payload.userId);
+      user.registered = false;
+    }
   }
 });

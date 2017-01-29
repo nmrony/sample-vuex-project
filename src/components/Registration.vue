@@ -45,7 +45,11 @@
       unRegister(user) {
         // we dont need this
         // this.$emit('unRegisterUser', user)
-        user.registered = false;
+        // user.registered = false;
+        this.$store.commit({
+          type: 'unregisterUser',
+          userId: user.id
+        })
       }
     }
   }

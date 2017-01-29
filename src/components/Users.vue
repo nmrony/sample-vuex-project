@@ -39,7 +39,8 @@
       registerUser(user) {
         // we dont need this
         //this.$emit('registerUser', user);
-        user.registered = true;
+        // user.registered = true;
+        this.$store.commit('registerUser', user.id)
       }
     }
   }
