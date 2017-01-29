@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export const store = new Vuex({
+export default new Vuex.Store({
   state: {
     users:[
       { id: 1, name: 'Nur', registered: false },

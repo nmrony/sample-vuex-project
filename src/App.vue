@@ -2,7 +2,7 @@
   <div id="app">
     <div class="columns ">
       <div class="column is-one-third is-offset-2">
-        <users :users="unregisteredUsers" @registerUser="registerUser"></users>
+        <users @registerUser="registerUser"></users>
       </div>
       <div class="column is-one-third">
         <registered-user :registeredUsers="registeredUsers" @unRegisterUser="unRegisterUser"></registered-user>

@@ -24,9 +24,11 @@
 <script>
   export default {
     name: 'users',
-    props: [
-      'users'
-    ],
+    computed: {
+      users() {
+        return this.$store.state.users;
+      }
+    },
     methods: {
       registerUser(user) {
 
