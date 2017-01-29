@@ -22,14 +22,19 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
   export default {
     name: 'users',
-    computed: {
-      users() {
-        console.log('In user', this.$store.state.users);
-        return this.$store.state.users.filter(user => !user.registered);
-      }
-    },
+    computed: mapGetters({
+      users: 'unregisteredUsers'
+    }),
+    /* We dont need this as we are using mapGetters
+      computed: {
+        users() {
+           return this.$store.getters.unregisteredUsers;
+        }
+      },
+    */
     methods: {
       registerUser(user) {
         // we dont need this

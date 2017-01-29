@@ -2,6 +2,7 @@
   <div class="box">
     <h1 align="center"><strong>Registered Users</strong></h1>
     <br>
+    <h2 align="center"><strong>Total: {{ total }}</strong></h2>
     <table class="table">
       <thead>
         <th>Name</th>
@@ -22,13 +23,24 @@
 </template>
 
 <script>
+  import  { mapGetters } from 'vuex';
+
   export default {
     name: 'registration',
     computed: {
-      registeredUsers() {
-        return this.$store.state.users.filter(user => user.registered)
+      ...mapGetters(['registeredUsers']),
+      total() {
+        return this.registeredUsers.length;
       }
     },
+   /*
+     we dont need this as we are using mapGetters
+     computed: {
+          registeredUsers() {
+            return this.$store.getters.registeredUsers;
+          }
+        },
+    */
     methods: {
       unRegister(user) {
         // we dont need this

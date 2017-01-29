@@ -13,5 +13,12 @@ export default new Vuex.Store({
       { id: 5, name: 'Farhad', registered: false },
     ]
   },
-
+  getters: {
+    unregisteredUsers(state) {
+      return state.users.filter(user => !user.registered);
+    },
+    registeredUsers(state) {
+      return state.users.filter(user => user.registered)
+    }
+  }
 });
